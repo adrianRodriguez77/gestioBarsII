@@ -8,8 +8,8 @@ import models.Resenya
 fun main() {
     val (totsElsBars, barsSenseTerrassa) = insertarBars()
     val hosteleria = Bar()
-    val resenyes = Resenya()
-
+    val resenyes = Resenya().escriureResenyas(totsElsBars)
+    val resenyesI = Resenya()
 
     do {
         print("""
@@ -32,7 +32,7 @@ fun main() {
                 1-> hosteleria.veureTotsElsBars(totsElsBars)
                 2-> hosteleria.veureBarsSenseTerrassa(barsSenseTerrassa)
                 3-> hosteleria.veureBarsAmbTerrassa(totsElsBars)
-                4-> resenyes.veureTotesLesResenyes(totsElsBars)
+                4-> resenyesI.veureTotesLesResenyes(resenyes, totsElsBars )
                 5-> hosteleria.cercarBarPerNom(totsElsBars)
                 6-> hosteleria.cercarBarsPerCarrer(totsElsBars)
                 0-> println("Que vagi bé!")

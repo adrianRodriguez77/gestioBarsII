@@ -27,6 +27,7 @@ open class Bar {
     }
 
     constructor()
+    constructor(nombre: String)
 
     fun getNombre(): String {
             return nombre
@@ -109,36 +110,36 @@ open class Bar {
             mostrarInformacioBar(bar)
         }
     }
-    fun veureBarsSenseTerrassa(barSenseTerrassa: List<Bar>) {
-        for (bar in barSenseTerrassa) {
+    fun veureBarsSenseTerrassa(bars: List<Bar>) {
+        for (bar in bars) {
+            if (bar is BarInterior)
             mostrarInformacioBar(bar)
         }
     }
     fun veureBarsAmbTerrassa(bars: List<Bar>) {
         for (bar in bars) {
+            if (bar is BarExterior)
             mostrarInformacioBar(bar)
         }
     }
     fun cercarBarPerNom(bars: List<Bar>) {
         print("Introdueix el nom del bar: ")
-        val nomBusqueda = readln()
+        val nomBusqueda = readln().lowercase()
         for (bar in bars){
-            if (bar.nombre == nomBusqueda){
+            if (bar.nombre.lowercase() == nomBusqueda) {
                 mostrarInformacioBar(bar)
             }
         }
-        println("No s'ha trobat cap bar.")
     }
     fun cercarBarsPerCarrer(bars: List<Bar>) {
         print("Introdueix el nom del carrer: ")
-        val carrerBusqueda = readln()
+        val carrerBusqueda = readln().lowercase()
 
         for (bar in bars) {
-            if (bar.direccion == carrerBusqueda) {
+            if (bar.direccion.lowercase() == carrerBusqueda) {
                 mostrarInformacioBar(bar)
             }
         }
-        println("No s'ha trobat cap bar.")
     }
     private fun mostrarInformacioBar(bar: Bar) {
 
@@ -158,4 +159,6 @@ open class Bar {
         }
         println("------------------------------------------")
     }
+
+
 }
