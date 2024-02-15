@@ -1,3 +1,8 @@
+package models
+
+import interfaces.Reservable
+import java.util.Date
+
 class Cliente() {
     private var nombre: String = ""
     private var telefono: Int = 0
@@ -12,16 +17,42 @@ class Cliente() {
     }
 
     //SETTERS Y GETTERS
-    fun getNombre(){}
-    fun setNombre(){}
-    fun getTelefono(){}
-    fun setTelefono(){}
-    fun getMail(){}
-    fun setMail(){}
-    fun getResenya(){}
-    fun setResenya(){}
+    fun getNombre(): String{
+        return nombre
+    }
+    fun setNombre(nombre: String){
+        this.nombre = nombre
+    }
+    fun getTelefono(): Int{
+        return telefono
+    }
+    fun setTelefono(telefono: Int){
+        this.telefono = telefono
+    }
+    fun getMail(): String{
+        return mail
+    }
+    fun setMail(mail: String){
+        this.mail = mail
+    }
+    fun getResenya(): MutableList<String>{
+        return mutableListOf()
+    }
+    fun setResenya(resenya: MutableList<String>){
+        this.resenya = resenya
+    }
 
     //METODOS
-    fun reservarMesa(telefono: Int, nombre: String){}
-    fun ponerResenya(){}
+    fun reservarMesa(telefono: Int, nombre: String): Boolean {
+        println("Introduce el telefono")
+        readln().toInt()
+        println("Introduce el nombre")
+        readln()
+
+        return true
+    }
+    fun ponerResenya(texto: String, puntuacion: Puntuacion, fecha: Date){
+        println("Escribe una resenya: ")
+        readln()
+    }
 }

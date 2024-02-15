@@ -1,3 +1,5 @@
+package models
+
 enum class Cadira(val numSillas: Int) {
     DOS(2),
     CUATRO(4),

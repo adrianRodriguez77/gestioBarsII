@@ -1,3 +1,5 @@
+package models
+
 enum class Puntuacion(puntuacion: Int) {
     UNO(1),
     DOS(2),

@@ -1,3 +1,8 @@
+package controllers
+
+import models.Bar
+import models.Resenya
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {

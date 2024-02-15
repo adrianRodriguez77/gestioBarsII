@@ -1,20 +1,27 @@
-open class Mesa() : Bar() {
-    private var silla: Int = 0
-    private var numMesa: Int = 0
-    private var clienteReserva: Cliente = Cliente()
+package models
 
-    constructor(silla: Int, numMesa: Int, clienteReserva: Cliente): this(){
-        this.silla = silla
-        this.numMesa = numMesa
-        this.clienteReserva = clienteReserva
-    }
+import interfaces.Reservable
+
+open class Mesa(override var reservada: Boolean, private var silla: Int = 0, private var numMesa: Int = 0, private var clienteReserva: Cliente = Cliente()) : Reservable {
 
     //SETTERS Y GETTERS
-    fun getSilla(){}
-    fun setSilla(){}
-    fun getNumMesa(){}
-    fun setNumMesa(){}
-    fun getCliennteReserva(){}
-    fun setCliennteReserva(){}
+    fun getSilla():Int{
+        return silla
+    }
+    fun setSilla(silla: Int){
+        this.silla = silla
+    }
+    fun getNumMesa(): Int{
+        return numMesa
+    }
+    fun setNumMesa(numMesa: Int){
+        this.numMesa = numMesa
+    }
+    fun getClienteReserva():Cliente{
+        return Cliente()
+    }
+    fun setClienteReserva(clienteReserva: Cliente){
+        this.clienteReserva = clienteReserva
+    }
 
 }

@@ -1,3 +1,5 @@
+package models
+
 import controllers.obtenerFechaConHora
 import utilities.ORANGE
 import utilities.RESET
@@ -93,8 +95,7 @@ open class Bar {
                 aforo = false
             } else aforo = true
             return aforo
-        }
-
+    }
     fun estadoApertura(): Boolean {
             val estadoApertura: Boolean
             val hora = Date()
@@ -108,19 +109,16 @@ open class Bar {
             mostrarInformacioBar(bar)
         }
     }
-
     fun veureBarsSenseTerrassa(barSenseTerrassa: List<Bar>) {
         for (bar in barSenseTerrassa) {
             mostrarInformacioBar(bar)
         }
     }
-
     fun veureBarsAmbTerrassa(bars: List<Bar>) {
         for (bar in bars) {
             mostrarInformacioBar(bar)
         }
     }
-
     fun cercarBarPerNom(bars: List<Bar>) {
         print("Introdueix el nom del bar: ")
         val nomBusqueda = readln()
@@ -131,7 +129,6 @@ open class Bar {
         }
         println("No s'ha trobat cap bar.")
     }
-
     fun cercarBarsPerCarrer(bars: List<Bar>) {
         print("Introdueix el nom del carrer: ")
         val carrerBusqueda = readln()
@@ -143,7 +140,6 @@ open class Bar {
         }
         println("No s'ha trobat cap bar.")
     }
-
     private fun mostrarInformacioBar(bar: Bar) {
 
         println("""
